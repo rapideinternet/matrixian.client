@@ -107,7 +107,7 @@ abstract class AbstractClient {
     protected function parseResponse(ResponseInterface $response): Response {
         return new Response([
             'status_code' => $response->getStatusCode(),
-            'body' => json_decode($response->getBody(), true),
+            'body' => $this->parseBody($response),
             'message' => 'Query was successful'
         ]);
     }

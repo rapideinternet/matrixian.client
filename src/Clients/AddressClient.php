@@ -14,7 +14,7 @@ class AddressClient extends AbstractClient {
      * @param string|null $house_letter
      * @return Response
      */
-    public function find(string $country_code, string $postal_code, string $house_number, ?string $house_number_ext = null, ?string $house_letter = null): Response {
+    public function check(string $country_code, string $postal_code, string $house_number, ?string $house_number_ext = null, ?string $house_letter = null): Response {
         $parameters = ['countryCode' => $country_code, 'postalCode' => $postal_code, 'houseNumber' => $house_number];
         if(!empty($house_letter)) {
             $parameters['houseNumber'] = $house_letter;
@@ -23,6 +23,6 @@ class AddressClient extends AbstractClient {
             $parameters['houseNumberExt'] = $house_number_ext;
         }
 
-        return $this->matrixian->get('/address/check', $parameters);
+        return $this->matrixian->check('/address/check', $parameters);
     }
 }

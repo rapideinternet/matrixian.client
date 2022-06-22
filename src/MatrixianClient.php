@@ -25,15 +25,10 @@ class MatrixianClient extends BaseClient {
     }
 
     /**
-     * @override
      * @param ResponseInterface $response
-     * @return Response
+     * @return array
      */
-    protected function parseResponse(ResponseInterface $response): Response {
-        return new Response([
-            'status_code' => $response->getStatusCode(),
-            'body' => ['data' => json_decode($response->getBody(), true)],
-            'message' => 'Query was successful'
-        ]);
+    protected function parseBody(ResponseInterface $response): array {
+        return ['data' => json_decode($response->getBody(), true)];
     }
 }

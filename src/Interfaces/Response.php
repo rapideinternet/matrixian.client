@@ -18,4 +18,9 @@ interface Response {
      * @return bool
      */
     public function isValid(): bool;
+
+    /**
+     * @return bool
+     */
+    public function isPaginatedResponse(): bool;
 }

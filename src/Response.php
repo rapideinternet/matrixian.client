@@ -41,13 +41,13 @@ class Response implements Interfaces\Response {
         return $this->body['data'] ?? null;
     }
 
-
     /**
      * @return array|null
      */
     public function getMeta(): ?array {
         return $this->body['meta'] ?? null;
     }
+
     /**
      * @return string
      */
@@ -67,6 +67,13 @@ class Response implements Interfaces\Response {
      */
     public function getMessages(): array {
         return [['status' => $this->getStatus(), 'text' => $this->message]];
+    }
+
+    /**
+     * @return bool
+     */
+    public function isPaginatedResponse(): bool {
+        return $this->getMeta() !== null && isset($this->getMeta()['pagination']);
     }
 
     /**
