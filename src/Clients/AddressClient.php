@@ -23,6 +23,6 @@ class AddressClient extends AbstractClient {
             $parameters['houseNumberExt'] = $house_number_ext;
         }
 
-        return $this->matrixian->check('/address/check', $parameters);
+        return $this->matrixian->get('/address/check', $parameters);
     }
 }
