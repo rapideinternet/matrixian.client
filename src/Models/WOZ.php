@@ -8,7 +8,7 @@ class WOZ {
 
     public ?int $house_number;
     public ?string $house_number_ext;
-    public string $postal_code;
+    public ?string $postal_code;
     public ?string $house_number_letter;
     public ?int $build_year;
     public ?string $use_purpose;

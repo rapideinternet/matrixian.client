@@ -6,15 +6,15 @@ class HouseDetails {
 
     public ?int $house_number;
     public ?string $house_number_ext;
-    public string $postal_code;
+    public ?string $postal_code;
     public ?string $house_letter;
     public ?int $living_surface;
     public ?int $other_indoor_space;
     public ?int $use_surface;
     public ?int $parcel_surface;
-    public string $object_type;
-    public int $build_year;
-    public string $energy_label;
+    public ?string $object_type;
+    public ?int $build_year;
+    public ?string $energy_label;
     public ?string $description;
     public ?int $number_of_bathrooms;
     public ?int $number_of_bedrooms;
