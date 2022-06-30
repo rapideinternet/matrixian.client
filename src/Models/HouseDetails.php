@@ -22,7 +22,7 @@ class HouseDetails {
     public ?int $number_of_toilets;
     public ?int $external_storage_space;
     public ?int $attached_outdoor_space;
-    public int $volume;
+    public ?int $volume;
 
     /**
      * @param array $data
