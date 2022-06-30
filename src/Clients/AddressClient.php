@@ -17,7 +17,7 @@ class AddressClient extends AbstractClient {
     public function check(string $country_code, string $postal_code, string $house_number, ?string $house_number_ext = null, ?string $house_letter = null): Response {
         $parameters = ['countryCode' => $country_code, 'postalCode' => $postal_code, 'houseNumber' => $house_number];
         if(!empty($house_letter)) {
-            $parameters['houseNumber'] = $house_letter;
+            $parameters['houseNumberExt'] = $house_letter;
         }
         if(!empty($house_number_ext)) {
             $parameters['houseNumberExt'] = $house_number_ext;
