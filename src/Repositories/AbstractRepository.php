@@ -9,9 +9,9 @@ abstract class AbstractRepository {
     protected MatrixianClient $matrixian;
 
     /**
-     * @param MatrixianClient $matrixianClient
+     * @param MatrixianClient $client
      */
-    public function __construct(MatrixianClient $matrixianClient) {
-        $this->matrixian = $matrixianClient;
+    public function __construct(MatrixianClient $client) {
+        $this->matrixian = $client;
     }
 }

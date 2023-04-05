@@ -18,8 +18,8 @@ class AddressClient extends AbstractClient {
         string $country_code,
         string $postal_code,
         string $house_number,
-        ?string $house_number_ext = null,
-        ?string $house_letter = null
+        string $house_number_ext = null,
+        string $house_letter = null
     ): Response {
         $parameters = ['countryCode' => $country_code, 'postalCode' => $postal_code, 'houseNumber' => $house_number];
         if(!empty($house_letter)) {

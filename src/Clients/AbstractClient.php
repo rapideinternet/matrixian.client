@@ -4,7 +4,7 @@ namespace RapideInternet\Matrixian\Clients;
 
 use RapideInternet\Matrixian\MatrixianClient;
 
-class AbstractClient extends \RapideInternet\Matrixian\Contracts\AbstractClient {
+abstract class AbstractClient extends \RapideInternet\Matrixian\Contracts\AbstractClient {
 
     protected MatrixianClient $matrixian;
 
