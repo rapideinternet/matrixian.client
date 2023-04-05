@@ -2,7 +2,7 @@
 
 namespace RapideInternet\Matrixian\Exceptions;
 
-use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 class NotFoundException extends Exception {
 
@@ -10,6 +10,6 @@ class NotFoundException extends Exception {
      * @return int
      */
     public function getStatusCode(): int {
-        return SymfonyResponse::HTTP_NOT_FOUND;
+        return HttpResponse::HTTP_NOT_FOUND;
     }
 }

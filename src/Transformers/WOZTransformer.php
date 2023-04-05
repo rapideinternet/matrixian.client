@@ -2,7 +2,7 @@
 
 namespace RapideInternet\Matrixian\Transformers;
 
-use RapideInternet\Matrixian\Models\WOZ;
+use RapideInternet\Matrixian\Interfaces\WOZ;
 
 class WOZTransformer extends Transformer {
 

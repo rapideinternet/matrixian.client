@@ -7,7 +7,7 @@ use Carbon\Carbon;
 use RapideInternet\Matrixian\Response;
 use RapideInternet\Matrixian\Interfaces;
 use Illuminate\Contracts\Encryption\Encrypter;
-use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 class AuthClient extends AbstractClient implements Interfaces\AuthClient {
 
@@ -194,7 +194,7 @@ class AuthClient extends AbstractClient implements Interfaces\AuthClient {
      */
     protected function authRequest(Response $response): void {
         $data = $response->getBody();
-        if($response->getStatusCode() === SymfonyResponse::HTTP_OK && isset($data[self::ACCESS_TOKEN])) {
+        if($response->getStatusCode() === HttpResponse::HTTP_OK && isset($data[self::ACCESS_TOKEN])) {
             $this->setAccessToken($data[self::ACCESS_TOKEN]);
             if(isset($data[self::REFRESH_TOKEN])) {
                 $this->setRefreshToken($data[self::REFRESH_TOKEN]);
@@ -202,7 +202,7 @@ class AuthClient extends AbstractClient implements Interfaces\AuthClient {
             $this->setExpiresAt($data[self::EXPIRES_IN]);
         }
         else {
-            if($response->getStatusCode() >= SymfonyResponse::HTTP_MULTIPLE_CHOICES && isset($data['error'])) {
+            if($response->getStatusCode() >= HttpResponse::HTTP_MULTIPLE_CHOICES && isset($data['error'])) {
                 $this->handleError($data);
             }
         }

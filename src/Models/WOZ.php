@@ -4,7 +4,7 @@ namespace RapideInternet\Matrixian\Models;
 
 use Illuminate\Support\Collection;
 
-class WOZ {
+class WOZ implements \RapideInternet\Matrixian\Interfaces\WOZ {
 
     public ?int $house_number;
     public ?string $house_number_ext;

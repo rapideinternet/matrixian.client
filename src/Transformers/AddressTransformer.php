@@ -2,7 +2,7 @@
 
 namespace RapideInternet\Matrixian\Transformers;
 
-use RapideInternet\Matrixian\Models\Address;
+use RapideInternet\Matrixian\Interfaces\Address;
 
 class AddressTransformer extends Transformer {
 

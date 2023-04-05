@@ -3,7 +3,7 @@
 namespace RapideInternet\Matrixian;
 
 use RapideInternet\Matrixian\Interfaces;
-use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
 class Response implements Interfaces\Response {
 
@@ -80,6 +80,6 @@ class Response implements Interfaces\Response {
      * @return bool
      */
     public function isValid(): bool {
-        return $this->getStatusCode() >= SymfonyResponse::HTTP_OK && $this->getStatusCode() <= SymfonyResponse::HTTP_IM_USED;
+        return $this->getStatusCode() >= HttpResponse::HTTP_OK && $this->getStatusCode() <= HttpResponse::HTTP_IM_USED;
     }
 }

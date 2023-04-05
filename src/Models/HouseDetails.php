@@ -2,7 +2,7 @@
 
 namespace RapideInternet\Matrixian\Models;
 
-class HouseDetails {
+class HouseDetails implements \RapideInternet\Matrixian\Interfaces\HouseDetails {
 
     public ?int $house_number;
     public ?string $house_number_ext;

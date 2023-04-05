@@ -4,7 +4,7 @@ namespace RapideInternet\Matrixian\Models;
 
 use Carbon\Carbon;
 
-class WOZValue {
+class WOZValue implements \RapideInternet\Matrixian\Interfaces\WOZValue {
 
     public ?Carbon $date;
     public ?float $value;

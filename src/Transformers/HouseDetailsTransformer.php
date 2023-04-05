@@ -2,7 +2,7 @@
 
 namespace RapideInternet\Matrixian\Transformers;
 
-use RapideInternet\Matrixian\Models\HouseDetails;
+use RapideInternet\Matrixian\Interfaces\HouseDetails;
 
 class HouseDetailsTransformer extends Transformer  {
 

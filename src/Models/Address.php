@@ -2,7 +2,7 @@
 
 namespace RapideInternet\Matrixian\Models;
 
-class Address {
+class Address implements \RapideInternet\Matrixian\Interfaces\Address {
 
     public ?string $country_name;
     public ?string $state;

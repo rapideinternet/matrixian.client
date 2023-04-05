@@ -14,7 +14,7 @@ use RapideInternet\Matrixian\Exceptions\ForbiddenException;
 use RapideInternet\Matrixian\Exceptions\BadRequestException;
 use RapideInternet\Matrixian\Exceptions\UnauthorizedException;
 use RapideInternet\Matrixian\Exceptions\NotImplementedException;
-use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use Symfony\Component\HttpFoundation\Response as HttpResponse;
 use RapideInternet\Matrixian\Exceptions\ServiceUnavailableException;
 use RapideInternet\Matrixian\Exceptions\UnprocessableEntityException;
 use RapideInternet\Matrixian\Exceptions\InternalServerErrorException;
@@ -138,19 +138,19 @@ abstract class AbstractClient {
                 return new InternalServerErrorException($e);
             }
             switch($response->getStatusCode()) {
-                case SymfonyResponse::HTTP_BAD_REQUEST:
+                case HttpResponse::HTTP_BAD_REQUEST:
                     return new BadRequestException($e);
-                case SymfonyResponse::HTTP_FORBIDDEN:
+                case HttpResponse::HTTP_FORBIDDEN:
                     return new ForbiddenException($e);
-                case SymfonyResponse::HTTP_INTERNAL_SERVER_ERROR:
+                case HttpResponse::HTTP_INTERNAL_SERVER_ERROR:
                     return new InternalServerErrorException($e);
-                case SymfonyResponse::HTTP_NOT_FOUND:
+                case HttpResponse::HTTP_NOT_FOUND:
                     return new NotFoundException($e);
-                case SymfonyResponse::HTTP_SERVICE_UNAVAILABLE:
+                case HttpResponse::HTTP_SERVICE_UNAVAILABLE:
                     return new ServiceUnavailableException($e);
-                case SymfonyResponse::HTTP_UNAUTHORIZED:
+                case HttpResponse::HTTP_UNAUTHORIZED:
                     return new UnauthorizedException($e);
-                case SymfonyResponse::HTTP_UNPROCESSABLE_ENTITY:
+                case HttpResponse::HTTP_UNPROCESSABLE_ENTITY:
                     return new UnprocessableEntityException($e);
                 default:
                     return new NotImplementedException($e);
