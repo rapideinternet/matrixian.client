@@ -11,27 +11,11 @@ use RapideInternet\Matrixian\Clients\HouseDetailsClient;
 class MatrixianClient extends BaseClient {
 
     protected string $url = 'https://api.matrixiangroup.com';
-    public AddressClient $address;
-    public HouseDetailsClient $houseDetails;
-    public WOZClient $woz;
-
-    /**
-     * @param AddressClient $address
-     * @param AuthClient $authClient
-     * @param HouseDetailsClient $houseDetails
-     * @param WOZClient $woz
-     */
-    public function __construct(
-        AddressClient $address,
-        AuthClient $authClient,
-        HouseDetailsClient $houseDetails,
-        WOZClient $woz
-    ) {
-        parent::__construct($authClient);
-        $this->address = $address;
-        $this->houseDetails = $houseDetails;
-        $this->woz = $woz;
-    }
+    protected array $clients = [
+        'address' => AddressClient::class,
+        'houseDetails' => HouseDetailsClient::class,
+        'woz' => WOZClient::class
+    ];
 
     /**
      * @param ResponseInterface $response

@@ -2,7 +2,7 @@
 
 namespace RapideInternet\Matrixian;
 
-class AuthClient extends \RapideInternet\Matrixian\Contracts\AuthClient {
+class AuthClient extends Contracts\AuthClient {
 
     /**
      * @param string $username
