@@ -1,15 +1,15 @@
 <?php
 
-namespace RapideInternet\Matrixian\Contracts;
+namespace RapideInternet\Matrixian\Clients\Implementation;
 
 use Closure;
 use Carbon\Carbon;
 use RapideInternet\Matrixian\Response;
-use RapideInternet\Matrixian\Interfaces;
 use Illuminate\Contracts\Encryption\Encrypter;
 use Symfony\Component\HttpFoundation\Response as HttpResponse;
+use RapideInternet\Matrixian\Clients\Contracts\AbstractClient;
 
-class AuthClient extends AbstractClient implements Interfaces\AuthClient {
+class AuthClient extends AbstractClient implements \RapideInternet\Matrixian\Clients\Interfaces\AuthClient {
 
     protected ?string $client_id;
     protected ?string $client_secret;

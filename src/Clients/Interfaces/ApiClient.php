@@ -1,6 +1,6 @@
 <?php
 
-namespace RapideInternet\Matrixian\Interfaces;
+namespace RapideInternet\Matrixian\Clients\Interfaces;
 
 use Closure;
 use RapideInternet\Matrixian\Response;
@@ -19,19 +19,19 @@ interface ApiClient {
     public function setCredentials(array $credentials): AuthClient;
 
     /**
-     * @return Response
+     * @return \RapideInternet\Matrixian\Clients\Interfaces\Response
      */
     public function authenticate(): Response;
 
     /**
      * @param string $username
      * @param string $password
-     * @return Response
+     * @return \RapideInternet\Matrixian\Clients\Interfaces\Response
      */
     public function login(string $username, string $password): Response;
 
     /**
-     * @return Response
+     * @return \RapideInternet\Matrixian\Clients\Interfaces\Response
      */
     public function refresh(): Response;
 
@@ -54,27 +54,27 @@ interface ApiClient {
     /**
      * @param string $url
      * @param array $parameters
-     * @return Response
+     * @return \RapideInternet\Matrixian\Clients\Interfaces\Response
      */
     public function get(string $url, array $parameters = []): Response;
 
     /**
      * @param string $url
      * @param array $data
-     * @return Response
+     * @return \RapideInternet\Matrixian\Clients\Interfaces\Response
      */
     public function post(string $url, array $data): Response;
 
     /**
      * @param string $url
      * @param array $data
-     * @return Response
+     * @return \RapideInternet\Matrixian\Clients\Interfaces\Response
      */
     public function put(string $url, array $data): Response;
 
     /**
      * @param string $url
-     * @return Response
+     * @return \RapideInternet\Matrixian\Clients\Interfaces\Response
      */
     public function delete(string $url): Response;
 

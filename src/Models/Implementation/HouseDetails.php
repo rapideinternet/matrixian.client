@@ -1,8 +1,10 @@
 <?php
 
-namespace RapideInternet\Matrixian\Models;
+namespace RapideInternet\Matrixian\Models\Implementation;
 
-class HouseDetails implements \RapideInternet\Matrixian\Interfaces\HouseDetails {
+use RapideInternet\Matrixian\Models\Interfaces;
+
+class HouseDetails implements Interfaces\HouseDetails {
 
     public ?int $house_number;
     public ?string $house_number_ext;

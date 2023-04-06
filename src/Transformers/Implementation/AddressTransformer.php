@@ -1,10 +1,10 @@
 <?php
 
-namespace RapideInternet\Matrixian\Transformers;
+namespace RapideInternet\Matrixian\Transformers\Implementation;
 
-use RapideInternet\Matrixian\Interfaces\Address;
+use RapideInternet\Matrixian\Models\Interfaces\Address;
 
-class AddressTransformer extends Transformer {
+class AddressTransformer implements \RapideInternet\Matrixian\Transformers\Interfaces\AddressTransformer {
 
     /**
      * @param Address $address

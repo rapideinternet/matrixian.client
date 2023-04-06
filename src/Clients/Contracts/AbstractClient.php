@@ -1,6 +1,6 @@
 <?php
 
-namespace RapideInternet\Matrixian\Contracts;
+namespace RapideInternet\Matrixian\Clients\Contracts;
 
 use GuzzleHttp\Client;
 use RapideInternet\Matrixian\Response;
@@ -134,27 +134,18 @@ abstract class AbstractClient {
             return new ServiceUnavailableException($e);
         }
         elseif($e instanceof RequestException) {
-            if(($response = $e->getResponse()) === null) {
-                return new InternalServerErrorException($e);
-            }
-            switch($response->getStatusCode()) {
-                case HttpResponse::HTTP_BAD_REQUEST:
-                    return new BadRequestException($e);
-                case HttpResponse::HTTP_FORBIDDEN:
-                    return new ForbiddenException($e);
-                case HttpResponse::HTTP_INTERNAL_SERVER_ERROR:
-                    return new InternalServerErrorException($e);
-                case HttpResponse::HTTP_NOT_FOUND:
-                    return new NotFoundException($e);
-                case HttpResponse::HTTP_SERVICE_UNAVAILABLE:
-                    return new ServiceUnavailableException($e);
-                case HttpResponse::HTTP_UNAUTHORIZED:
-                    return new UnauthorizedException($e);
-                case HttpResponse::HTTP_UNPROCESSABLE_ENTITY:
-                    return new UnprocessableEntityException($e);
-                default:
-                    return new NotImplementedException($e);
-            }
+            return ($response = $e->getResponse()) === null
+                ? new InternalServerErrorException($e)
+                : match($response->getStatusCode()) {
+                    HttpResponse::HTTP_BAD_REQUEST => new BadRequestException($e),
+                    HttpResponse::HTTP_FORBIDDEN => new ForbiddenException($e),
+                    HttpResponse::HTTP_INTERNAL_SERVER_ERROR => new InternalServerErrorException($e),
+                    HttpResponse::HTTP_NOT_FOUND => new NotFoundException($e),
+                    HttpResponse::HTTP_SERVICE_UNAVAILABLE => new ServiceUnavailableException($e),
+                    HttpResponse::HTTP_UNAUTHORIZED => new UnauthorizedException($e),
+                    HttpResponse::HTTP_UNPROCESSABLE_ENTITY => new UnprocessableEntityException($e),
+                    default => new NotImplementedException($e)
+                };
         }
         return new NotImplementedException($e);
     }

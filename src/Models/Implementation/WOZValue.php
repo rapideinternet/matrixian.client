@@ -1,10 +1,11 @@
 <?php
 
-namespace RapideInternet\Matrixian\Models;
+namespace RapideInternet\Matrixian\Models\Implementation;
 
 use Carbon\Carbon;
+use RapideInternet\Matrixian\Models\Interfaces;
 
-class WOZValue implements \RapideInternet\Matrixian\Interfaces\WOZValue {
+class WOZValue implements Interfaces\WOZValue {
 
     public ?Carbon $date;
     public ?float $value;

@@ -1,10 +1,11 @@
 <?php
 
-namespace RapideInternet\Matrixian\Models;
+namespace RapideInternet\Matrixian\Models\Implementation;
 
 use Illuminate\Support\Collection;
+use RapideInternet\Matrixian\Models\Interfaces;
 
-class WOZ implements \RapideInternet\Matrixian\Interfaces\WOZ {
+class WOZ implements Interfaces\WOZ {
 
     public ?int $house_number;
     public ?string $house_number_ext;

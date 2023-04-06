@@ -1,10 +1,11 @@
 <?php
 
-namespace RapideInternet\Matrixian\Clients;
+namespace RapideInternet\Matrixian\Clients\Implementation;
 
 use RapideInternet\Matrixian\MatrixianClient;
+use RapideInternet\Matrixian\Clients\Contracts\AbstractClient;
 
-abstract class AbstractClient extends \RapideInternet\Matrixian\Contracts\AbstractClient {
+abstract class BaseClient extends AbstractClient {
 
     protected MatrixianClient $matrixian;
 

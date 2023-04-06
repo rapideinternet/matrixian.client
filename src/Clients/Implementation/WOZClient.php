@@ -1,10 +1,10 @@
 <?php
 
-namespace RapideInternet\Matrixian\Clients;
+namespace RapideInternet\Matrixian\Clients\Implementation;
 
 use RapideInternet\Matrixian\Response;
 
-class HouseDetailsClient extends AbstractClient {
+class WOZClient extends BaseClient {
 
     /**
      * @param string $postal_code
@@ -26,6 +26,6 @@ class HouseDetailsClient extends AbstractClient {
         if(!empty($house_number_ext)) {
             $parameters['houseNumberExt'] = $house_number_ext;
         }
-        return $this->matrixian->get('/mx-house-details', $parameters);
+        return $this->matrixian->get('/woz-value', $parameters);
     }
 }

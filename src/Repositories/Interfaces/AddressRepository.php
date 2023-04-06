@@ -1,11 +1,11 @@
 <?php
 
-namespace RapideInternet\Matrixian\Repositories;
+namespace RapideInternet\Matrixian\Repositories\Interfaces;
 
 use Illuminate\Support\Collection;
-use RapideInternet\Matrixian\Models\Address;
+use RapideInternet\Matrixian\Models\Implementation\Address;
 
-class AddressRepository extends AbstractRepository {
+interface AddressRepository {
 
     /**
      * @param string $postal_code
@@ -21,12 +21,7 @@ class AddressRepository extends AbstractRepository {
         string $house_number_ext = null,
         string $house_letter = null,
         string $country_code = 'NL'
-    ): Collection {
-        $response = $this->matrixian->address->check($country_code, $postal_code, $house_number, $house_number_ext, $house_letter);
-        return $response->isValid() ? collect($response->getData())->map(function($data) {
-            return new Address($data);
-        }) : collect();
-    }
+    ): Collection;
 
     /**
      * @param string $postal_code
@@ -42,7 +37,5 @@ class AddressRepository extends AbstractRepository {
         string $house_number_ext = null,
         string $house_letter = null,
         string $country_code = 'NL'
-    ): ?Address {
-        return $this->check($postal_code, $house_number, $house_number_ext, $house_letter, $country_code)->first();
-    }
+    ): ?Address;
 }

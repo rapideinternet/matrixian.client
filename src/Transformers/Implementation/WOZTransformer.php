@@ -1,10 +1,11 @@
 <?php
 
-namespace RapideInternet\Matrixian\Transformers;
+namespace RapideInternet\Matrixian\Transformers\Implementation;
 
-use RapideInternet\Matrixian\Interfaces\WOZ;
+use RapideInternet\Matrixian\Models\Interfaces\WOZ;
+use RapideInternet\Matrixian\Transformers\Contracts\Transformer;
 
-class WOZTransformer extends Transformer {
+class WOZTransformer implements \RapideInternet\Matrixian\Transformers\Interfaces\WOZTransformer {
 
     /**
      * @param WOZ $woz

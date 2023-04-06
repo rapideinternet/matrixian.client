@@ -1,10 +1,10 @@
 <?php
 
-namespace RapideInternet\Matrixian\Clients;
+namespace RapideInternet\Matrixian\Clients\Implementation;
 
 use RapideInternet\Matrixian\Response;
 
-class AddressClient extends AbstractClient {
+class AddressClient extends BaseClient {
 
     /**
      * @param string $country_code

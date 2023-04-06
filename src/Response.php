@@ -2,10 +2,9 @@
 
 namespace RapideInternet\Matrixian;
 
-use RapideInternet\Matrixian\Interfaces;
 use Symfony\Component\HttpFoundation\Response as HttpResponse;
 
-class Response implements Interfaces\Response {
+class Response implements Clients\Interfaces\Response {
 
     protected int $status_code;
     protected ?array $body;

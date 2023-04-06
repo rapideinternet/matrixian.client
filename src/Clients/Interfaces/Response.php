@@ -1,6 +1,6 @@
 <?php
 
-namespace RapideInternet\Matrixian\Interfaces;
+namespace RapideInternet\Matrixian\Clients\Interfaces;
 
 interface Response {
 

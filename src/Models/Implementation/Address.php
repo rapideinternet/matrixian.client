@@ -1,8 +1,10 @@
 <?php
 
-namespace RapideInternet\Matrixian\Models;
+namespace RapideInternet\Matrixian\Models\Implementation;
 
-class Address implements \RapideInternet\Matrixian\Interfaces\Address {
+use RapideInternet\Matrixian\Models\Interfaces;
+
+class Address implements Interfaces\Address {
 
     public ?string $country_name;
     public ?string $state;

@@ -1,6 +1,6 @@
 <?php
 
-namespace RapideInternet\Matrixian\Repositories;
+namespace RapideInternet\Matrixian\Repositories\Contracts;
 
 use RapideInternet\Matrixian\MatrixianClient;
 

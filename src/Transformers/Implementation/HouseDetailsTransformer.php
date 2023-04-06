@@ -1,10 +1,10 @@
 <?php
 
-namespace RapideInternet\Matrixian\Transformers;
+namespace RapideInternet\Matrixian\Transformers\Implementation;
 
-use RapideInternet\Matrixian\Interfaces\HouseDetails;
+use RapideInternet\Matrixian\Models\Interfaces\HouseDetails;
 
-class HouseDetailsTransformer extends Transformer  {
+class HouseDetailsTransformer implements \RapideInternet\Matrixian\Transformers\Interfaces\HouseDetailsTransformer  {
 
     /**
      * @param HouseDetails $houseDetails
